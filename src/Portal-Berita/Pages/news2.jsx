@@ -9,7 +9,7 @@ import NavBar from "../Components/NavBar";
 
 const apiKey = "47eb6134e647457384a0da41bd4610f7";
 
-export default function News2({ country = "us" }) {
+export default function News2({ country = "id" }) {
   const [isLoading, setIsLoading] = useState(false);
   const [errorMessage, setErrorMessage] = useState("");
   const [data, setData] = useState([]);
