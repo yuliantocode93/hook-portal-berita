@@ -7,15 +7,13 @@ import NewsPage from "../Components/NewsPage";
 import ErrorAlert from "../Components/ErrorAlert";
 import NavBar from "../Components/NavBar";
 
-const apiKey = "47eb6134e647457384a0da41bd4610f7";
-
-export default function News2({ country = "id" }) {
+export default function News2({ apiKey }) {
   const [isLoading, setIsLoading] = useState(false);
   const [errorMessage, setErrorMessage] = useState("");
   const [data, setData] = useState([]);
 
   const handleSearch = (keyword) => {
-    let url = `https://newsapi.org/v2/top-headlines?country=${country}&apiKey=${apiKey}`;
+    let url = `https://newsapi.org/v2/top-headlines?country=us&apiKey=${apiKey}`;
     if (keyword !== "") {
       url = `https://newsapi.org/v2/everything?q=${keyword}&apiKey=${apiKey}`;
     }
@@ -40,7 +38,7 @@ export default function News2({ country = "id" }) {
 
   useEffect(() => {
     handleSearch("");
-  }, [country]);
+  }, []);
 
   return (
     <Container maxWidth={false} disableGutters>
